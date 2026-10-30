@@ -25,7 +25,6 @@ nunca está en la memoria de la app.
 ## Cómo correrlo
 
 ```bash
-gradle wrapper        # una sola vez, para añadir el wrapper al repo
 ./gradlew test        # los vectores del anexo
 ./gradlew run         # la demostración del ciclo completo
 ```

@@ -1,5 +1,6 @@
 plugins {
-    kotlin("jvm") version "2.1.0"
+    kotlin("jvm") version "2.2.10"
+    `maven-publish`
     application
 }
 
@@ -28,5 +29,17 @@ tasks.test {
     testLogging {
         events("passed", "failed", "skipped")
         showStandardStreams = false
+    }
+}
+
+java {
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
     }
 }
